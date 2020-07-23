@@ -1,0 +1,212 @@
+
+mysql> SELECT nombre FROM producto;
++---------------------------------+
+| nombre                          |
++---------------------------------+
+| Disco duro SATA3 1TB            |
+| Memoria RAM DDR4 8GB            |
+| Disco SSD 1 TB                  |
+| GeForce GTX 1050Ti              |
+| GeForce GTX 1080 Xtreme         |
+| Monitor 24 LED Full HD          |
+| Monitor 27 LED Full HD          |
+| Portátil Yoga 520               |
+| Portátil Ideapd 320             |
+| Impresora HP Deskjet 3720       |
+| Impresora HP Laserjet Pro M26nw |
++---------------------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT nombre, precio FROM producto;
++---------------------------------+--------+
+| nombre                          | precio |
++---------------------------------+--------+
+| Disco duro SATA3 1TB            |  86.99 |
+| Memoria RAM DDR4 8GB            |    120 |
+| Disco SSD 1 TB                  | 150.99 |
+| GeForce GTX 1050Ti              |    185 |
+| GeForce GTX 1080 Xtreme         |    755 |
+| Monitor 24 LED Full HD          |    202 |
+| Monitor 27 LED Full HD          | 245.99 |
+| Portátil Yoga 520               |    559 |
+| Portátil Ideapd 320             |    444 |
+| Impresora HP Deskjet 3720       |  59.99 |
+| Impresora HP Laserjet Pro M26nw |    180 |
++---------------------------------+--------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT * FROM producto;
++--------+---------------------------------+--------+-------------------+
+| codigo | nombre                          | precio | codigo_fabricante |
++--------+---------------------------------+--------+-------------------+
+|      1 | Disco duro SATA3 1TB            |  86.99 |                 5 |
+|      2 | Memoria RAM DDR4 8GB            |    120 |                 6 |
+|      3 | Disco SSD 1 TB                  | 150.99 |                 4 |
+|      4 | GeForce GTX 1050Ti              |    185 |                 7 |
+|      5 | GeForce GTX 1080 Xtreme         |    755 |                 6 |
+|      6 | Monitor 24 LED Full HD          |    202 |                 1 |
+|      7 | Monitor 27 LED Full HD          | 245.99 |                 1 |
+|      8 | Portátil Yoga 520               |    559 |                 2 |
+|      9 | Portátil Ideapd 320             |    444 |                 2 |
+|     10 | Impresora HP Deskjet 3720       |  59.99 |                 3 |
+|     11 | Impresora HP Laserjet Pro M26nw |    180 |                 3 |
++--------+---------------------------------+--------+-------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT nombre, precio, precio*0.86 FROM producto;
++---------------------------------+--------+-------------------+
+| nombre                          | precio | precio*0.86       |
++---------------------------------+--------+-------------------+
+| Disco duro SATA3 1TB            |  86.99 | 74.81139999999999 |
+| Memoria RAM DDR4 8GB            |    120 |             103.2 |
+| Disco SSD 1 TB                  | 150.99 |          129.8514 |
+| GeForce GTX 1050Ti              |    185 |             159.1 |
+| GeForce GTX 1080 Xtreme         |    755 |             649.3 |
+| Monitor 24 LED Full HD          |    202 |            173.72 |
+| Monitor 27 LED Full HD          | 245.99 |          211.5514 |
+| Portátil Yoga 520               |    559 |            480.74 |
+| Portátil Ideapd 320             |    444 |            381.84 |
+| Impresora HP Deskjet 3720       |  59.99 |           51.5914 |
+| Impresora HP Laserjet Pro M26nw |    180 |             154.8 |
++---------------------------------+--------+-------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT nombre AS "nombre de producto", precio AS "euros", precio*0.86 AS
+"dólares" FROM producto;
++---------------------------------+--------+-------------------+
+| nombre de producto              | euros  | dólares           |
++---------------------------------+--------+-------------------+
+| Disco duro SATA3 1TB            |  86.99 | 74.81139999999999 |
+| Memoria RAM DDR4 8GB            |    120 |             103.2 |
+| Disco SSD 1 TB                  | 150.99 |          129.8514 |
+| GeForce GTX 1050Ti              |    185 |             159.1 |
+| GeForce GTX 1080 Xtreme         |    755 |             649.3 |
+| Monitor 24 LED Full HD          |    202 |            173.72 |
+| Monitor 27 LED Full HD          | 245.99 |          211.5514 |
+| Portátil Yoga 520               |    559 |            480.74 |
+| Portátil Ideapd 320             |    444 |            381.84 |
+| Impresora HP Deskjet 3720       |  59.99 |           51.5914 |
+| Impresora HP Laserjet Pro M26nw |    180 |             154.8 |
++---------------------------------+--------+-------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT UPPER(nombre) AS nombre FROM producto;
++---------------------------------+
+| nombre                          |
++---------------------------------+
+| DISCO DURO SATA3 1TB            |
+| MEMORIA RAM DDR4 8GB            |
+| DISCO SSD 1 TB                  |
+| GEFORCE GTX 1050TI              |
+| GEFORCE GTX 1080 XTREME         |
+| MONITOR 24 LED FULL HD          |
+| MONITOR 27 LED FULL HD          |
+| PORTÁTIL YOGA 520               |
+| PORTÁTIL IDEAPD 320             |
+| IMPRESORA HP DESKJET 3720       |
+| IMPRESORA HP LASERJET PRO M26NW |
++---------------------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT LOWER(nombre) AS nombre FROM  producto;
++---------------------------------+
+| nombre                          |
++---------------------------------+
+| disco duro sata3 1tb            |
+| memoria ram ddr4 8gb            |
+| disco ssd 1 tb                  |
+| geforce gtx 1050ti              |
+| geforce gtx 1080 xtreme         |
+| monitor 24 led full hd          |
+| monitor 27 led full hd          |
+| portátil yoga 520               |
+| portátil ideapd 320             |
+| impresora hp deskjet 3720       |
+| impresora hp laserjet pro m26nw |
++---------------------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT nombre, UPPER(LEFT(nombre,2)) FROM fabricante;
++-----------------+-----------------------+
+| nombre          | UPPER(LEFT(nombre,2)) |
++-----------------+-----------------------+
+| Asus            | AS                    |
+| Lenovo          | LE                    |
+| Hewlett-Packard | HE                    |
+| Samsung         | SA                    |
+| Seagate         | SE                    |
+| Crucial         | CR                    |
+| Gigabyte        | GI                    |
+| Huawei          | HU                    |
+| Xiaomi          | XI                    |
++-----------------+-----------------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT ROUND(precio,0) FROM productO;
++-----------------+
+| ROUND(precio,0) |
++-----------------+
+|              87 |
+|             120 |
+|             151 |
+|             185 |
+|             755 |
+|             202 |
+|             246 |
+|             559 |
+|             444 |
+|              60 |
+|             180 |
++-----------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT TRUNCATE(precio,0) FROM producto;
++--------------------+
+| TRUNCATE(precio,0) |
++--------------------+
+|                 86 |
+|                120 |
+|                150 |
+|                185 |
+|                755 |
+|                202 |
+|                245 |
+|                559 |
+|                444 |
+|                 59 |
+|                180 |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT codigo_fabricante FROM producto;
++-------------------+
+| codigo_fabricante |
++-------------------+
+|                 1 |
+|                 1 |
+|                 2 |
+|                 2 |
+|                 3 |
+|                 3 |
+|                 4 |
+|                 5 |
+|                 6 |
+|                 6 |
+|                 7 |
++-------------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT codigo_fabricante FROM producto;
++-------------------+
+| codigo_fabricante |
++-------------------+
+|                 1 |
+|                 2 |
+|                 3 |
+|                 4 |
+|                 5 |
+|                 6 |
+|                 7 |
++-------------------+
+7 rows in set (0.00 sec)
+
